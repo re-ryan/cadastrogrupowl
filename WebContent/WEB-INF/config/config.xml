@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FILE PROPERTIES:</comment>
+  
+<!-- produção sql server -->
+
+<entry key="jdbc.sqlserver.url">jdbc:sqlserver://172.20.16.53</entry>
+<entry key="jdbc.sqlserver.username">posvenda</entry>
+<entry key="jdbc.sqlserver.password">usrP0SVCv##</entry>
+
+<!-- Web Service de Autenticação -->
+<entry key="WebService.Autenticacao.Url">http://172.25.1.5:8080/AutenticacaoWS/services/Autenticacao</entry>
+
+<!-- produção oracle -->
+<!-- <entry key="jdbc.Oracle.url">jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.20.0.19) (PORT=1521))(CONNECT_DATA=(SERVICE_NAME=oracorp)))</entry>
+<entry key="jdbc.Oracle.username">corp</entry>
+<entry key="jdbc.Oracle.password">corp</entry> -->
+
+<!-- homologação sql server -->
+<!--<entry key="jdbc.sqlserver.url">jdbc:sqlserver://ADMHLG01;instanceName=hlgtrans5</entry>
+<entry key="jdbc.sqlserver.username">TI_DEV</entry>
+<entry key="jdbc.sqlserver.password">&amp;D3S&amp;nV@Fr0MT1*</entry>-->
+
+
+<!-- homologação oracle -->
+<!-- <entry key="jdbc.Oracle.url">jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.21.2.33) (PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBOHLG)))</entry>
+<entry key="jdbc.Oracle.username">INTERFACE_WMS</entry>
+<entry key="jdbc.Oracle.password">smw98ecafretnihlg</entry> -->
+
+<entry key="mail.serv">smtp.gmail.com</entry>
+<entry key="mail.port">465</entry>
+<entry key="mail.from">srv.sistemas2@casaevideo.com.br</entry>
+<entry key="mail.user">srv.sistemas2@casaevideo.com.br</entry>
+<entry key="mail.pass">%#S4C&amp;viDuser@</entry>
+
+
+</properties>

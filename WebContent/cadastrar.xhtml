@@ -1,0 +1,85 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/Layout.xhtml">
+
+	<ui:define name="content">
+
+		<h1 class="aw-page-title" align="left"
+			style="position: relative; color: white; margin-left: 50px; font-size: 1.4em; padding: 15px 0;">GRUPO
+			WL</h1>
+
+		<meta http-equiv="EXPIRES" content="0" />
+		<meta http-equiv="pragma" content="nocache" />
+
+		<p:spacer height="20px" />
+
+		<f:metadata>
+			<f:viewAction action="#{ClienteBean.init}" />
+		</f:metadata>
+
+		<h:form id="formMenu">
+			<p:menubar>
+
+				<p:menuitem value="Cadastrar" icon="pi pi-user-plus"
+					action="/cadastrar.xhtml?faces-redirect=true" ajax="false" />
+				<p:menuitem value="Pesquisar" icon="pi pi-search"
+					action="/consultar.xhtml?faces-redirect=true" ajax="false" />
+				<f:facet name="options">
+					<p:commandButton value="Sair" icon="pi pi-fw pi-sign-out"
+						styleClass="ui-button-info" action="#{LoginBean.logout}"
+						ajax="false" />
+				</f:facet>
+			</p:menubar>
+
+		</h:form>
+
+		<br />
+		<br />
+
+		<h:form id="formCadastro">
+
+			<p:growl id="growl" />
+
+			<p:panel header="Cadastrar Clientes">
+				<h:panelGrid columns="3" columnClasses="label, value">
+
+					<p:outputLabel value="Nome Completo: " />
+					<p:inputText value="#{ClienteBean.cliente.nome}" required="true"
+						requiredMessage="Campo nome é obrigatório." autocomplete="off">
+						<p:keyFilter regEx="/[^\d]/i" />
+					</p:inputText>
+					<h:inputHidden></h:inputHidden>
+
+					<p:outputLabel value="CPF: " />
+					<p:inputMask value="#{ClienteBean.cliente.cpf}" required="true"
+						mask="999.999.999-99" requiredMessage="Campo cpf é obrigatório."
+						autocomplete="off">
+
+					</p:inputMask>
+					<h:inputHidden></h:inputHidden>
+
+					<p:outputLabel value="Data de Nascimento: " />
+					<p:calendar value="#{ClienteBean.cliente.datNascimento}"
+						required="true" pattern="dd/MM/yyyy" locale="pt" navigator="true"
+						requiredMessage="Campo data de nascimento é obrigatório."
+						maxdate="#{ClienteBean.maxDate}" mindate="#{ClienteBean.minDate}"
+						yearRange="c-1000:c+1000" autocomplete="off" />
+
+					<p:commandButton icon="pi pi-save" action="#{ClienteBean.cadastra}"
+						ajax="false" />
+
+				</h:panelGrid>
+
+
+			</p:panel>
+
+		</h:form>
+
+
+
+	</ui:define>
+
+</ui:composition>

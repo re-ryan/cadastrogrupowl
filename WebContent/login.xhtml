@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/Layout.xhtml">
+
+	<ui:define name="content">
+
+		<h1 class="aw-page-title" align="left"
+			style="position: relative; color: white; margin-left: 50px; font-size: 1.4em; padding: 15px 0;">GRUPO
+			WL</h1>
+
+		<META HTTP-EQUIV="EXPIRES" CONTENT="0" />
+		<META HTTP-EQUIV="pragma" CONTENT="nocache" />
+		<meta http-equiv="refresh"
+			content="30;url=#{request.contextPath}/login.xhtml" />
+
+		<f:metadata>
+			<f:viewAction action="#{LoginBean.init}" />
+		</f:metadata>
+
+
+		<p:spacer height="50" />
+
+		<h:form id="form">
+
+			<p:fieldset legend="Cadastro de Clientes"
+				style="margin:auto;padding:40px;width:23%">
+
+				<p:growl id="growl" />
+
+				<h:panelGrid columns="2" cellpadding="5">
+
+					<p:outputLabel value="Login: " for="usuario" />
+					<p:inputText id="usuario" required="true" style="width: 150px;"
+						autocomplete="off" value="#{LoginBean.login}" />
+
+					<p:outputLabel value="Senha: " for="senha" />
+					<p:password id="senha" required="true" style="width: 150px;"
+						autocomplete="off" redisplay="true" value="#{LoginBean.senha}" />
+
+					<h:inputHidden></h:inputHidden>
+					<p:commandButton value="Logar" ajax="false"
+						action="#{LoginBean.logar}" />
+				</h:panelGrid>
+
+			</p:fieldset>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
